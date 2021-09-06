@@ -1,0 +1,1236 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<!-- Mirrored from b2c.kiwi/products?categoryId=99 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Sep 2021 11:59:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>B2C Direct</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="tc6zTXMRPucLOuJKRMh5HN-GBseeoPZULrdoUHWxdfA" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="bege/images/icons/favicon-bege.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="bege/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bege/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bege/css/ionicons.min.css">
+    <link rel="stylesheet" href="bege/css/css-plugins-call.css">
+    <link rel="stylesheet" href="bege/css/bundle.css">
+    <link rel="stylesheet" href="bege/css/main.css">
+    <link rel="stylesheet" href="bege/css/responsive.css">
+    <link rel="stylesheet" href="bege/css/colors.css">
+    <link rel="stylesheet" href="bege/css/custom.css">
+    <!--[endif]-->
+
+    <link rel="stylesheet" href="css/ckeditor.css">
+
+<!-- angular plugin css -->
+    <link href="js/app-libs/please-wait/please-wait.css" rel="stylesheet"/>
+    <link href="js/app-libs/SpinKit/css/spinkit.css" rel="stylesheet"/>
+    <link href="js/app-libs/angular-busy-tracker/busy.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-dialog/css/ngDialog.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/highcharts-ng/highcharts-ng.css" rel="stylesheet"/>
+    <link href="js/app-libs/angular-wizard/dist/angular-wizard.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/dropzone/min/dropzone.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-dropzone/dist/ng-dropzone.css" rel="stylesheet"/>
+    <link href="js/app-libs/angular-datepicker/angular-datepicker.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-toast/ngToast.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-toast/ngToast-animations.min.css" rel="stylesheet"/>
+    <!-- Fixing Internet Explorer ______________________________________-->
+
+ <style type="text/css">
+     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+         display: none !important;
+     }
+ </style>
+<script type="text/ng-template" id="needLoginTemplate">
+    <div class="theme_title_center align_center">
+        <br>
+        <h3>请先登陆</h3>
+        <span></span>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <p>您需要先登陆才能进行下一步操作</p>
+                            <br>
+                <br>
+                <a href="/signin" class="btn-upper btn btn-primary checkout-page-button">
+                    去登陆
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="registerFormTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Modal dialog</span>
+                <p class="margin-four">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-very-small button popup-modal-dismiss no-margin" href="#">Dismiss</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="payDialogModal">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Choose payment method</span>
+                <br>
+                <br>
+                <a ng-repeat="gateway in gateways"
+                   style="cursor: pointer;"
+                   class="highlight-button btn btn-lg button popup-modal-dismiss no-margin" ng-click="pay(gateway)">
+                    {{gateway.type}}</a>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-small button popup-modal-dismiss no-margin pull-right"
+                   ng-click="closePayDialog()">Dismiss</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="resetPasswordTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Password resetted </span>
+                <h4 class="margin-four">An email has been sent to your mailbox, please check!</h4>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-lg button popup-modal-dismiss no-margin"
+                   style="cursor: pointer;"
+                   ng-click="closerRsetPasswordModal()">OK</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="contactUsSuccessTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Message sent </span>
+                <h4 class="margin-four">We will contact you later, thanks!</h4>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-lg button popup-modal-dismiss no-margin"
+                   style="cursor: pointer;"
+                   ng-click="closeModal()">OK</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="contactUsFailTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Sorry error happens</span>
+                <h4 class="margin-four">Please try again later</h4>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-lg button popup-modal-dismiss no-margin"
+                   style="cursor: pointer;"
+                   ng-click="closeModal()">OK</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+    <style>
+        .align_center {
+            text-align: center;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//bege/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+        .ng-toast .alert-success {
+            /*color: #c7003d !important;*/
+            /*background-color: #dff0d8;*/
+            /*border-color: #d6e9c6;*/
+            color: #155724 !important;
+            background-color: #d4edda !important;
+            border-color: #c3e6cb !important;
+        }
+    </style>
+
+
+    <style>
+        /*.home-product img {*/
+        /*max-height: 200px !important;*/
+        /*}*/
+
+        .home-product .product-share a {
+            cursor: pointer;
+        }
+    </style>
+
+
+    <style type="text/css">
+        /* Start by setting display:none to make this hidden.
+       Then we position it in relation to the viewport window
+       with position:fixed. Width, height, top and left speak
+       for themselves. Background we set to 80% white with
+       our animation centered, and no-repeating */
+        .spin-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, .8) url('js/spin/spinner-1s-200px2.gif') 50% 50% no-repeat;
+        }
+
+        /* When the body has the loading class, we turn
+           the scrollbar off with overflow:hidden */
+        .spin-modal {
+            overflow: hidden;
+        }
+
+        /* Anytime the body has the loading class, our
+           modal element will be visible */
+        .spin-modal {
+            display: block;
+        }
+
+    </style>
+
+
+</head>
+<body class="cnt-home loading">
+<toast></toast>
+<div class="wrapper home-one single-product-page">
+<style>
+    </style>
+
+
+
+<!-- HEADER AREA START -->
+<header class="header-area" ng-controller="headerController" ng-cloak>
+    <!-- Header top area start -->
+    <div class="header-top-area" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <div class="top-bar-left">
+                        <!-- welcome -->
+                        <div class="welcome">
+                            <p>New Zealand's Fastest Online Shopping Destination</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="topbar-nav">
+                        <div class="wpb_wrapper">
+                            <!-- my account -->
+                            <div class="switcher">
+                                <!-- language-menu -->
+                                <div class="language my-top-header-info">
+                                    <a href="mailto:account@b2c.kiwi"><i class="fa fa-envelope-o"></i>
+                                        account@b2c.kiwi</a>
+                                </div>
+                                <div class="language my-top-header-info">
+                                    <i class="fa fa-map-marker"></i> 525 Great South Road
+                                </div>
+                                <div class="language my-top-header-info">
+                                    <i class="fa fa-phone"></i> 021607848
+                                </div>
+                                <!-- currency-menu -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar area end -->
+    <!-- Header middle area start -->
+    <div class="header-middle-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-md-12">
+                    <!-- site-logo -->
+                    <div class="site-logo">
+                        <a href="index.html"><img src="bege/images/logo/logo-white.png" alt="Nikado"></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <!-- header-search -->
+                    <div class="header-search clearfix">
+                        <div class="category-select pull-right">
+                            <select class="nice-select-menu" ng-model="categoryId">
+                                <option value="" data-display="All Categories">All Categories</option>
+                                  <option value="107" >Sheds & Carports</option>
+                                  <option value="105" >Postage & packing supplies</option>
+                                  <option value="99" selected>Pet Supplies</option>
+                            </select>
+                        </div>
+                        <div class="header-search-form my-header-search-form">
+                            <form>
+                                <input type="text" name="search" ng-model="keyword" placeholder="Search product...">
+                                <input type="submit" name="submit" value="Search" ng-click="search()">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .white-achor {
+                        color: #ffffff !important;
+                        cursor: pointer !important;
+                    }
+                </style>
+                <div class="col-xl-4 col-md-12">
+                    <!-- shop-cart-menu -->
+                    <div class="shop-cart-menu pull-right">
+                        <ul>
+                            <li ng-if="!isAuthenticated">
+                                <a class="white-achor" href="products.html">
+                                    <i class="ion-ios-shuffle-strong">
+
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li ng-if="!isAuthenticated">
+                                <a href="signin.html" class="white-achor"><i class="ion-log-in"></i></a>
+                            </li>
+
+                            <li ng-if="isAuthenticated">
+                                <a class="white-achor" href="account.html"><i class="ion-ios-person"></i></a>
+                            </li>
+
+                            <li ng-if="isAuthenticated">
+                                <a class="white-achor" ng-click="logout()">
+                                    <i class="ion-log-out">
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li><a class="white-achor" ng-href="{{!isAuthenticated ? '/signin':'/cart'}}">
+                            <span class="cart-icon">
+                                <i class="ion-bag"></i><sup>{{cartItemAmount?cartItemAmount:0}}</sup>
+                            </span>
+                                <span class="cart-text" ng-if="isAuthenticated">
+                                <span class="cart-text-title">My cart <br> <strong>$ {{totalPrice?totalPrice:0}}</strong> </span>
+                            </span>
+
+                                <span class="cart-text" ng-if="!isAuthenticated">
+                                <span class="cart-text-title">My cart <br> <strong>&nbsp;</strong> </span>
+                            </span>
+                            </a>
+                                <ul ng-if="cartItems.length > 0">
+                                    <li ng-repeat="cartItem in cartItems | limitTo: 4">
+                                        <!-- single-shop-cart-wrapper -->
+                                        <div class="single-shop-cart-wrapper">
+                                            <div class="shop-cart-img">
+                                                <a href="cart.html"><img
+                                                        ng-src="{{hostUrl + cartItem.productSingle.mainImages[0].fullPath + clientIdStr}}"
+                                                        alt="Image of Product"></a>
+                                            </div>
+                                            <div class="shop-cart-info">
+                                                <h5><a href="cart.html">{{cartItem.productSingle.name | limitTo : 30}}</a>
+                                                </h5>
+                                                <span class="price">$ {{cartItem.productSingle.promotionPrice}}</span>
+                                                <span class="quantaty">Qty: {{cartItem.amount}}</span>
+                                                <span class="cart-remove"><a ng-click="delete(cartItem.id)"><i
+                                                        class="fa fa-times"></i></a></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li ng-if="cartItems.length > 4">
+                                        <!-- shop-cart-total -->
+                                        <div class="shop-cart-total my-shop-cart-total">
+                                            <a href="cart.html"><p>View More ...</p></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="shop-cart-btn">
+                                            <a href="checkout.html">Checkout</a>
+                                            <a href="cart.html" class="pull-right">View Cart</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header middle area end -->
+    <!-- Header bottom area start -->
+    <div class="header-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 hidden-md hidden-sm pull-left category-wrapper">
+                    <div class="categori-menu">
+                        <span class="categorie-title">Categories</span>
+                        <nav>
+                            <ul class="categori-menu-list menu-hidden">
+
+                                 <li>
+                                     <a href="productse680.html?categoryId=107">
+                                         Sheds & Carports<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a href="products4a0a.html?categoryId=105">
+                                         Postage & packing supplies<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a href="products7f15.html?categoryId=99">
+                                         Pet Supplies<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <!-- main-menu -->
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li class="current"><a href="index.html">Home</a></li>
+                                <li><a href="products.html">Shop</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="orders.html">Orders</a>
+                                <li><a href="about-us.html">About Us</a>
+                                <li><a href="faq.html">FAQ</a>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mobile-menu-area">
+                        <div class="mobile-menu">
+                            <nav id="mobile-menu-active">
+                                <ul class="menu-overflow">
+                                    <li class="current"><a href="index.html">Home</a></li>
+                                    <li><a href="products.html">Shop</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="orders.html">Orders</a>
+                                    <li><a href="faq.html">Q&A</a>
+                                </ul>
+                                </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header bottom area end -->
+</header>
+<!-- HRADER AREA END --><script>
+    var qrId = '';
+    
+    var activityId = '';
+
+    var categoryId = '';
+
+    var orderId = '';
+
+    var clientId = '';
+         clientId = '42';
+
+    var clientIdStr = '';
+    if(clientId){
+        clientIdStr = '&clientId=' + clientId;
+    }
+
+    var keyword = '';
+
+    var footerId = '';
+
+    var hostUrl = '';
+        hostUrl = 'api.html';
+
+    var addressId = '';
+
+    var fxTheme = '';
+         fxTheme = 'bege';
+
+    var productId = '';
+</script>
+<div class="breadcrumbs-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="woocommerce-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span> Shop
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Shop page wraper -->
+    <div class="shop-page-wraper" ng-controller="productsController" ng-cloak>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 sidebar-shop">
+                    <div class="sidebar-product-categori">
+                        <div class="widget-title">
+                            <h3>PRODUCT CATEGORIES</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="product-categories">
+
+                                <li ng-class="{ active : categoryId == '' }" ><a href="products.html">All</a></li>
+                                 <li class="cat-item" ng-class="{ active : categoryId == 107 }">
+                                     <a href="productse680.html?categoryId=107">Sheds & Carports</a>
+                                 </li>
+                                 <li class="cat-item" ng-class="{ active : categoryId == 105 }">
+                                     <a href="products4a0a.html?categoryId=105">Postage & packing supplies</a>
+                                 </li>
+                                 <li class="cat-item" ng-class="{ active : categoryId == 99 }">
+                                     <a href="products7f15.html?categoryId=99">Pet Supplies</a>
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="product-filter mb-30" ng-if="false">
+                            <div class="widget-title">
+                                <h3>Filter by price</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div id="price-range"></div>
+                                <div class="price-values">
+                                    <div class="price_text_btn">
+                                        <span>Price:</span>
+                                        <input type="text" class="price-amount">
+                                    </div>
+                                    <button class="button" type="submit">Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-title" ng-if="false">
+                            <h3>SELECT BY COLOR</h3>
+                        </div>
+                        <div class="widget-content" ng-if="false">
+                            <ul class="product-categories">
+                                <li class="cat-item">
+                                    <a href="#">Gold</a>
+                                    <span class="count">(1)</span>
+                                </li>
+                                <li class="cat-item">
+                                    <a href="#">Green</a>
+                                    <span class="count">(1)</span>
+                                </li>
+                                <li class="cat-item">
+                                    <a href="#">White</a>
+                                    <span class="count">(1)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-filter mb-30">
+                            <div class="widget-title">
+                                <h3>TOP RATED PRODUCTS</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="product_list_widget">
+                                            <li class="widget-mini-product">
+                                        <div class="product-image">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <img alt="" src="api/v1/attachment/2019_01_10_12_41_53_WeChat%20Image_201901101241370efe.png?filename=2019_01_10_12_41_53_WeChat%20Image_20190110124137.png&amp;clientId=42">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <span class="product-title">
+                                                            XL Wooden Dog Kennel All-Weather Flat R ...
+                                                </span>
+                                            </a>
+                                            <div class="star-rating">
+                                                <div class="rating-box" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">$</span>215.95</span>
+                                        </div>
+                                    </li>
+                                            <li class="widget-mini-product">
+                                        <div class="product-image">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <img alt="" src="api/v1/attachment/2019_01_10_12_33_38_WeChat%20Image_20190110123315c713.png?filename=2019_01_10_12_33_38_WeChat%20Image_20190110123315.png&amp;clientId=42">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <span class="product-title">
+                                                            XL Wooden Dog Kennel All-Weather Elevat ...
+                                                </span>
+                                            </a>
+                                            <div class="star-rating">
+                                                <div class="rating-box" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">$</span>225.95</span>
+                                        </div>
+                                    </li>
+                                            <li class="widget-mini-product">
+                                        <div class="product-image">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <img alt="" src="api/v1/attachment/2019_01_09_17_10_36_%a6%a6%a5%a67%a6%af%a6%fe%a9-34d4.jpg?filename=2019_01_09_17_10_36_%c2%a6%c2%a6%c2%a5%c2%a67%c2%a6%c2%af%c2%a6%c3%be%c2%a9-.jpg&amp;clientId=42">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <span class="product-title">
+                                                            XL Wooden Dog House with Flip Open Hing ...
+                                                </span>
+                                            </a>
+                                            <div class="star-rating">
+                                                <div class="rating-box" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">$</span>135.95</span>
+                                        </div>
+                                    </li>
+                                            <li class="widget-mini-product">
+                                        <div class="product-image">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <img alt="" src="api/v1/attachment/2019_01_10_12_36_52_WeChat%20Image_201901101236036db4.png?filename=2019_01_10_12_36_52_WeChat%20Image_20190110123603.png&amp;clientId=42">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <span class="product-title">
+                                                            XXL Flat Roof Wooden Dog House Kennel
+                                                </span>
+                                            </a>
+                                            <div class="star-rating">
+                                                <div class="rating-box" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">$</span>145.95</span>
+                                        </div>
+                                    </li>
+                                            <li class="widget-mini-product">
+                                        <div class="product-image">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <img alt="" src="api/v1/attachment/2019_01_04_11_21_09___2___%20copy%2010.33.56%20AMd7f4.jpg?filename=2019_01_04_11_21_09_%e8%83%8c%e6%99%af2%e4%b8%bb%e9%a1%b5%e5%9b%be%20copy%2010.33.56%20AM.jpg&amp;clientId=42">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a title="Phasellus vel hendrerit" href="#">
+                                                <span class="product-title">
+                                                            Large Flat Roof Wooden Dog House Kennel
+                                                </span>
+                                            </a>
+                                            <div class="star-rating">
+                                                <div class="rating-box" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">$</span>180</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-single-banner" ng-if="false">
+                            <a href="#">
+                                <img src="bege/images/banner/shop-sidebar.png" alt="Banner">
+                            </a>
+                        </div>
+                        <div class="sidebar-tag" ng-if="false">
+                            <div class="widget-title">
+                                <h3>PRODUCT TAGS</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div class="product-tags">
+                                    <a href="#">New </a>
+                                    <a href="#">brand</a>
+                                    <a href="#">black</a>
+                                    <a href="#">white</a>
+                                    <a href="#">chire</a>
+                                    <a href="#">table</a>
+                                    <a href="#">Lorem</a>
+                                    <a href="#">ipsum</a>
+                                    <a href="#">dolor</a>
+                                    <a href="#">sit</a>
+                                    <a href="#">amet</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-9 shop-content">
+                    <div class="product-toolbar">
+                        <div class="topbar-title">
+                            <h1>Products</h1>
+                        </div>
+                        <div class="product-toolbar-inner">
+                            <div class="product-view-mode">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#grid"><i class="ion-grid"></i></a></li>
+                                    <li><a data-toggle="tab" href="#list"><i class="ion-navicon"></i></a></li>
+                                </ul>
+                            </div>
+                            <p class="woocommerce-result-count">Showing 1–12 of 42 results</p>
+                            <div class="woocommerce-ordering">
+                                <form method="get" class="woocommerce-ordering hidden-xs">
+                                    <div class="orderby-wrapper">
+                                        <select ng-options="option.str as option.name for option in listOfOptions"
+                                                ng-model="selected"
+                                                ng-change="makeSort(selected)">
+                                            <option value="" selected disabled>Sort by</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="shop-page-product-area tab-content">
+                            <div id="grid" class="tab-pane fade in show active">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4 col-xl-3 grid-product" dir-paginate="product in products | itemsPerPage: 12" total-items="totalCount" current-page="current" id="row">
+                                        <div class="single-product-area">
+                                            <div class="product-wrapper gridview">
+                                                <div class="list-col4">
+                                                    <div class="product-image my-grid-product-image">
+                                                        <a href="detail/%7b%7bproduct.html" >
+                                                            <img ng-src="{{hostUrl + product.mainImages[0].fullPath + '&clientId=' + clientId }}" alt="">
+                                                        </a>
+                                                        <div class="quickviewbtn">
+                                                            <a href="detail/%7b%7bproduct.html"><i class="ion-eye"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-col8">
+                                                    <div class="product-info">
+                                                        <h2><a href="detail/%7b%7bproduct.html">{{product.name}}</a></h2>
+                                                        <span class="price">
+                                                            <del>$ {{product.price}}</del> $ {{product.promotionPrice}}
+                                                        </span>
+                                                    </div>
+                                                    <div class="product-hidden">
+                                                        <div class="add-to-cart">
+                                                            <a ng-click="addToCart(product.id, 1)">Add to cart</a>
+                                                        </div>
+                                                        <div class="star-actions">
+                                                            <div class="product-rattings" ng-if="false">
+                                                                <span><i class="fa fa-star"></i></span>
+                                                                <span><i class="fa fa-star"></i></span>
+                                                                <span><i class="fa fa-star"></i></span>
+                                                                <span><i class="fa fa-star-half-o"></i></span>
+                                                                <span><i class="fa fa-star-o"></i></span>
+                                                            </div>
+                                                            <ul class="actions" ng-if="false">
+                                                                <li><a href="#"><i class="ion-android-favorite-outline"></i></a></li>
+                                                                <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<dir-pagination-controls on-page-change="pageChanged(newPageNumber)"
+                         template-url="/bege/templates/dirPagination.tpl.html"
+                         class="start"></dir-pagination-controls>                            </div>
+                            <div id="list" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-sm-12" dir-paginate="product in products | itemsPerPage: 12" total-items="totalCount" current-page="current" id="row">
+                                        <div class="single-product-area">
+                                            <div class="product-wrapper listview">
+                                                <div class="list-col4">
+                                                    <div class="product-image">
+                                                        <a href= "detail/%7b%7bproduct.html">
+                                                            <img ng-src="{{hostUrl + product.mainImages[0].fullPath + '&clientId=' + clientId }}" alt="">
+                                                        </a>
+                                                        <div class="quickviewbtn">
+                                                            <a href="#" data-toggle="modal" data-target="#product_modal"  data-original-title="Quick View"><i class="ion-eye"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-col8">
+                                                    <div class="product-info">
+                                                        <h2><a href="detail/%7b%7bproduct.html">{{product.name}}</a></h2>
+                                                        <span class="price">
+                                                            <del>$ {{product.price}}</del> $ {{product.promotionPrice}}
+                                                        </span>
+                                                        <div class="product-rattings" ng-if="false">
+                                                            <span><i class="fa fa-star"></i></span>
+                                                            <span><i class="fa fa-star"></i></span>
+                                                            <span><i class="fa fa-star"></i></span>
+                                                            <span><i class="fa fa-star-half-o"></i></span>
+                                                            <span><i class="fa fa-star-o"></i></span>
+                                                        </div>
+                                                        <div class="product-desc">
+                                                            <p ng-bind-html="product.shortDescription"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="actions-wrapper">
+                                                        <div class="add-to-cart">
+                                                            <a ng-click="addToCart(product.id, 1)">Add to cart</a>
+                                                        </div>
+                                                        <div class="star-actions" ng-if="false">
+                                                            <ul class="actions">
+                                                                <li><a href="#"><i class="ion-android-favorite-outline"></i>Add to Wishlist</a></li>
+                                                                <li><a href="#"><i class="ion-ios-shuffle-strong"></i>Compare</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<dir-pagination-controls on-page-change="pageChanged(newPageNumber)"
+                         template-url="/bege/templates/dirPagination.tpl.html"
+                         class="start"></dir-pagination-controls>                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop page wraper end -->
+
+<footer class="footer-area my-footer-area">
+
+<footer class="footer-area">
+<!-- newsletter area -->
+<div class="newsletter-area" ng-if="false">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-xl-12 my-footer-newsletter-area">
+                <div class="newsletter-text">
+                    <div class="icon"><i class="icon ion-email"></i></div>
+                        <h3>Sign Up To Newsletter</h3>
+                        <h4>..and Receive $29 Coupon For First Shopping</h4>
+                    </div>
+                <div class="newsletter">
+                <div class="newsletter-box">
+                    <form action="#">
+                        <input class="subscribe" placeholder="your email address" name="email" id="subscribe" type="email">
+                        <button type="submit" class="submit">subscribe!</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- newsletter area end -->
+<!-- footer policy area -->
+<div class="footer-policy-area">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-reply-all"></i></p>
+        <h3>Free Returns</h3>
+        <p>Currently over 50 countries qualify for express international shipping.</p>
+    </div>
+</div>
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-ribbon-b"></i></p>
+        <h3>Customer Support</h3>
+        <p>We really care about you and your website as much as you do.</p>
+    </div>
+</div>
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-android-plane"></i></p>
+        <h3>International Shipping</h3>
+        <p>Currently over 50 countries qualify for express international shipping.</p>
+    </div>
+</div>
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-android-star"></i></p>
+        <h3>Dedicated Service</h3>
+        <p>Consult our specialists for help with an order, customization, or design advice.</p>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- footer policy area end -->
+
+<div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-md-3 col-xs-12">
+                    <div class="footer-logo-area my-footer-logo-area">
+                        <a href="index.html"><img src="bege/images/logo/logo-black.png" alt="footer logo"></a>
+                                                <ul>
+                            <li>
+                                <p>More of what you want.<br>Our company philosophy has never changed, that is supplying quality products and services at cheaper prices. </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                            <li><a href="address.html">My Address</a></li>
+                            <li><a href="orders.html">Order History</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Category</h3>
+                        <ul>
+                                <li>
+                                    <a href="productse680.html?categoryId=107">
+                                        Sheds & Carports
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="products4a0a.html?categoryId=105">
+                                        Postage & packing supplies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="products7f15.html?categoryId=99">
+                                        Pet Supplies
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="term-condition.html">Term & Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Contact info:</h3>
+                        <ul>
+                            <li>525 Great South Road </li>
+                        </ul>
+                        <h3>Telephone:</h3>
+                        <ul>
+                            <li>021607848</li>
+                        </ul>
+                        <h3>Email:</h3>
+                        <ul>
+                            <a href="mailto:account@b2c.kiwi"><li>account@b2c.kiwi</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- footer copyright area -->
+<div class="footer-copyright-area">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-lg-12 col-md-12 my-footer-copyright">
+    <p>Copyright © 2018 B2C Direct . All Rights Reserved.</p>
+</div>
+<div class="col-sm-12 col-lg-6 col-md-6 pull-right" ng-if="false">
+    <img src="bege/images/icons/payment-icon.png" alt="payment icon">
+</div>
+</div>
+</div>
+</div>
+<!-- footer copyright area end -->
+</footer></div>
+<div ng-controller="dashboardController">
+    <div class="spin-modal" ng-if="loading"></div>
+</div>
+
+
+<script type="text/ng-template" id="needLoginTemplate">
+    <div class="theme_title_center align_center">
+        <br>
+        <h3>请先登陆</h3>
+        <span></span>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <p>您需要先登陆才能进行下一步操作</p>
+                <br>
+                <br>
+                <a href="/signin" class="btn-upper btn btn-primary checkout-page-button">
+                    去登陆
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="registerFormTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Modal dialog</span>
+                <p class="margin-four">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-very-small button popup-modal-dismiss no-margin" href="#">Dismiss</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="payDialogModal">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Choose payment method</span>
+                <br>
+                <br>
+                <a ng-repeat="gateway in gateways"
+                   style="cursor: pointer;"
+                   class="highlight-button btn btn-lg button popup-modal-dismiss no-margin my-pay-type-btn" ng-click="pay(gateway)">
+                    {{gateway.type}}</a>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-small button popup-modal-dismiss no-margin pull-right"
+                   ng-click="closePayDialog()">Dismiss</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- javascript libraries / javascript files set #1 -->
+<!-- jQuery CDN -->
+<script src="../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- jQuery Local -->
+<script>window.jQuery || document.write('<script src="bege/js/jquery-3.2.1.min.js"><\/script>')</script>
+
+<!-- Popper min js -->
+<script src="bege/js/popper.min.js"></script>
+<!-- Bootstrap min js  -->
+<script src="bege/js/bootstrap.min.js"></script>
+<!-- nivo slider pack js  -->
+<script src="bege/js/jquery.nivo.slider.pack.js"></script>
+<!-- All plugins here -->
+<script src="bege/js/plugins.js"></script>
+<!-- Main js  -->
+<script src="bege/js/main.js"></script>
+
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>
+<script src="../www.google-analytics.com/analytics.js" async defer></script>
+
+
+
+<!-- _________ angular js lib__________ -->
+<script src="js/app-libs/angular/angular.min.js"></script>
+<script src="js/app-libs/angular-busy-tracker/busy.min.js"></script>
+<script src="js/app-libs/spin.js/spin.min.js"></script>
+<script src="js/app-libs/angular-spinner/angular-spinner.min.js"></script>
+<script src="js/app-libs/ng-dialog/js/ngDialog.min.js"></script>
+<script src="js/app-libs/bootbox-js/bootbox.min.js"></script>
+<script src="js/app-libs/angular-messages/angular-messages.min.js"></script>
+<script src="js/app-libs/angular-resource/angular-resource.min.js"></script>
+
+<script src="js/app-libs/highcharts-ng/highstock.src.js"></script>
+<script src="js/app-libs/highcharts-ng/highcharts-ng.min.js"></script>
+<script src="js/app-libs/angular-wizard/dist/angular-wizard.min.js"></script>
+<script src="js/app-libs/dropzone/min/dropzone.min.js"></script>
+<script src="js/app-libs/ng-dropzone/dist/ng-dropzone.min.js"></script>
+
+<script src="js/app-libs/moment/moment.min.js"></script>
+<script src="js/app-libs/moment-timezone/moment-timezone-with-data.min.js"></script>
+<script src="js/app-libs/angular-datepicker/angular-datepicker.min.js"></script>
+<script src="js/app-libs/ng-toast/ngToast.min.js"></script>
+<script src="js/app-libs/angular-animate.min.js"></script>
+<script src="js/app-libs/angular-sanitize.min.js"></script>
+<script src="js/app-libs/angular-utils-pagination/dirPagination.js"></script>
+<script type="text/javascript" src="js/app-libs/lodash.min.js"></script>
+<!-- _________ angular js app -->
+<script src="js/app/app.js"></script>
+<script src="js/app/app-constant.js"></script>
+<script src="js/app/controllers/home.controller.js"></script>
+<script src="js/app/cargoexpress-controllers/cargo-home.controller.js"></script>
+<script src="js/app/controllers/products.controller.js"></script>
+<script src="js/app/controllers/faq.controller.js"></script>
+<script src="js/app/controllers/login.controller.js"></script>
+<script src="js/app/controllers/cart.controller.js"></script>
+<script src="js/app/controllers/order.controller.js"></script>
+<script src="js/app/controllers/order-detail.controller.js"></script>
+<script src="js/app/controllers/checkout.controller.js"></script>
+<script src="js/app/controllers/category.controller.js"></script>
+<script src="js/app/controllers/header.controller.js"></script>
+<script src="js/app/cargoexpress-controllers/cargo-header.controller.js"></script>
+<script src="js/app/controllers/register.controller.js"></script>
+<script src="js/app/controllers/footer.controller.js"></script>
+<script src="js/app/controllers/detail.controller.js"></script>
+<script src="js/app/controllers/address.controller.js"></script>
+<script src="js/app/controllers/dashboard.controller.js"></script>
+<script src="js/app/controllers/coin.controller.js"></script>
+<script src="js/app/controllers/add-address.controller.js"></script>
+<script src="js/app/controllers/account.controller.js"></script>
+<script src="js/app/controllers/coin-activity.controller.js"></script>
+<script src="js/app/controllers/find-password.controller.js"></script>
+<script src="js/app/controllers/contact.controller.js"></script>
+<script src="js/app/bege-controllers/bege-checkout.controller.js"></script>
+<script src="js/app/controllers/edit-address.controller.js"></script>
+<script src="js/app/controllers/website-news.controller.js"></script>
+
+
+
+<script src="js/app/services/account.service.js"></script>
+<script src="js/app/services/auth.service.js"></script>
+<script src="js/app/services/home.service.js"></script>
+<script src="js/app/services/order.service.js"></script>
+<script src="js/app/services/resources.service.js"></script>
+
+<script src="js/app/services/address.service.js"></script>
+<script src="js/app/services/app-user.service.js"></script>
+<script src="js/app/services/availability.service.js"></script>
+<script src="js/app/services/balance.service.js"></script>
+<script src="js/app/services/balance-detail.service.js"></script>
+<script src="js/app/services/cart.service.js"></script>
+<script src="js/app/services/cart-item.service.js"></script>
+<script src="js/app/services/category.service.js"></script>
+<script src="js/app/services/coin-activity.service.js"></script>
+<script src="js/app/services/coin-history.service.js"></script>
+<script src="js/app/services/content.service.js"></script>
+<script src="js/app/services/country.service.js"></script>
+<script src="js/app/services/coupon.service.js"></script>
+<script src="js/app/services/currency.service.js"></script>
+<script src="js/app/services/experience.service.js"></script>
+<script src="js/app/services/faq.service.js"></script>
+<script src="js/app/services/favorite.service.js"></script>
+<script src="js/app/services/feature-type.service.js"></script>
+<script src="js/app/services/feedback.service.js"></script>
+<script src="js/app/services/feedback-type.service.js"></script>
+<script src="js/app/services/footer.service.js"></script>
+<script src="js/app/services/gateway.service.js"></script>
+<script src="js/app/services/guest-requirement.service.js"></script>
+<script src="js/app/services/home-page-slider.service.js"></script>
+<script src="js/app/services/inventory-detail.service.js"></script>
+<script src="js/app/services/invitation.service.js"></script>
+<script src="js/app/services/language.service.js"></script>
+<script src="js/app/services/member-group.service.js"></script>
+<script src="js/app/services/product-multi.service.js"></script>
+<script src="js/app/services/product-single.service.js"></script>
+<script src="js/app/services/registration-answer.service.js"></script>
+<script src="js/app/services/registration-question.service.js"></script>
+<script src="js/app/services/registration-question-option.service.js"></script>
+<script src="js/app/services/shipment.service.js"></script>
+<script src="js/app/services/shipment-detail.service.js"></script>
+<script src="js/app/services/shipment-fee.service.js"></script>
+<script src="js/app/services/social-link.service.js"></script>
+<script src="js/app/services/tag.service.js"></script>
+<script src="js/app/services/term-condition.service.js"></script>
+<script src="js/app/services/transaction-single.service.js"></script>
+<script src="js/app/services/transaction-single-item.service.js"></script>
+<script src="js/app/services/website-column.service.js"></script>
+<script src="js/app/services/my.service.js"></script>
+<script src="js/app/services/profile.service.js"></script>
+<script src="js/app/services/website-news.service.js"></script>
+<script src="js/app/services/attribute.service.js"></script>
+
+
+<script src="js/app/directives/file-dropzone.directive.js"></script>
+<script src="js/app/directives/compare-password.directive.js"></script>
+<script src="js/app/directives/compare-to.directive.js"></script>
+<script src="js/app/directives/complex-password.directive.js"></script>
+<script src="js/app/directives/valid-email.directive.js"></script>
+
+</body>
+
+<!-- Mirrored from b2c.kiwi/products?categoryId=99 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Sep 2021 11:59:24 GMT -->
+</html>
