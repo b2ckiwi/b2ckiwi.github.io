@@ -1,144 +1,2130 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<!-- Mirrored from b2c.kiwi/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Sep 2021 11:57:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>Local index - HTTrack Website Copier</title>
-  <!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<style type="text/css">
-	<!--
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>B2C Direct</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="tc6zTXMRPucLOuJKRMh5HN-GBseeoPZULrdoUHWxdfA" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="bege/images/icons/favicon-bege.png">
+    <!-- Place favicon.ico in the root directory -->
 
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
+    <link rel="stylesheet" href="bege/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bege/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bege/css/ionicons.min.css">
+    <link rel="stylesheet" href="bege/css/css-plugins-call.css">
+    <link rel="stylesheet" href="bege/css/bundle.css">
+    <link rel="stylesheet" href="bege/css/main.css">
+    <link rel="stylesheet" href="bege/css/responsive.css">
+    <link rel="stylesheet" href="bege/css/colors.css">
+    <link rel="stylesheet" href="bege/css/custom.css">
+    <!--[endif]-->
 
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
+    <link rel="stylesheet" href="css/ckeditor.css">
 
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
+<!-- angular plugin css -->
+    <link href="js/app-libs/please-wait/please-wait.css" rel="stylesheet"/>
+    <link href="js/app-libs/SpinKit/css/spinkit.css" rel="stylesheet"/>
+    <link href="js/app-libs/angular-busy-tracker/busy.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-dialog/css/ngDialog.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/highcharts-ng/highcharts-ng.css" rel="stylesheet"/>
+    <link href="js/app-libs/angular-wizard/dist/angular-wizard.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/dropzone/min/dropzone.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-dropzone/dist/ng-dropzone.css" rel="stylesheet"/>
+    <link href="js/app-libs/angular-datepicker/angular-datepicker.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-toast/ngToast.min.css" rel="stylesheet"/>
+    <link href="js/app-libs/ng-toast/ngToast-animations.min.css" rel="stylesheet"/>
+    <!-- Fixing Internet Explorer ______________________________________-->
 
-#siteNavigation .current { background-color: #ccd; }
-
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
-
-
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
-
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
-
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
-
-
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
-
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
-
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
-
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
-
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
+ <style type="text/css">
+     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+         display: none !important;
+     }
+ </style>
+<script type="text/ng-template" id="needLoginTemplate">
+    <div class="theme_title_center align_center">
+        <br>
+        <h3>请先登陆</h3>
+        <span></span>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <p>您需要先登陆才能进行下一步操作</p>
+                            <br>
+                <br>
+                <a href="/signin" class="btn-upper btn btn-primary checkout-page-button">
+                    去登陆
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
 
 
-// -->
-</style>
+<script type="text/ng-template" id="registerFormTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Modal dialog</span>
+                <p class="margin-four">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-very-small button popup-modal-dismiss no-margin" href="#">Dismiss</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="payDialogModal">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Choose payment method</span>
+                <br>
+                <br>
+                <a ng-repeat="gateway in gateways"
+                   style="cursor: pointer;"
+                   class="highlight-button btn btn-lg button popup-modal-dismiss no-margin" ng-click="pay(gateway)">
+                    {{gateway.type}}</a>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-small button popup-modal-dismiss no-margin pull-right"
+                   ng-click="closePayDialog()">Dismiss</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="resetPasswordTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Password resetted </span>
+                <h4 class="margin-four">An email has been sent to your mailbox, please check!</h4>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-lg button popup-modal-dismiss no-margin"
+                   style="cursor: pointer;"
+                   ng-click="closerRsetPasswordModal()">OK</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="contactUsSuccessTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Message sent </span>
+                <h4 class="margin-four">We will contact you later, thanks!</h4>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-lg button popup-modal-dismiss no-margin"
+                   style="cursor: pointer;"
+                   ng-click="closeModal()">OK</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="contactUsFailTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Sorry error happens</span>
+                <h4 class="margin-four">Please try again later</h4>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-lg button popup-modal-dismiss no-margin"
+                   style="cursor: pointer;"
+                   ng-click="closeModal()">OK</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+    <style>
+        .align_center {
+            text-align: center;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//bege/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+        .ng-toast .alert-success {
+            /*color: #c7003d !important;*/
+            /*background-color: #dff0d8;*/
+            /*border-color: #d6e9c6;*/
+            color: #155724 !important;
+            background-color: #d4edda !important;
+            border-color: #c3e6cb !important;
+        }
+    </style>
+
+
+    <style>
+        /*.home-product img {*/
+        /*max-height: 200px !important;*/
+        /*}*/
+
+        .home-product .product-share a {
+            cursor: pointer;
+        }
+    </style>
+
+
+    <style type="text/css">
+        /* Start by setting display:none to make this hidden.
+       Then we position it in relation to the viewport window
+       with position:fixed. Width, height, top and left speak
+       for themselves. Background we set to 80% white with
+       our animation centered, and no-repeating */
+        .spin-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, .8) url('js/spin/spinner-1s-200px2.gif') 50% 50% no-repeat;
+        }
+
+        /* When the body has the loading class, we turn
+           the scrollbar off with overflow:hidden */
+        .spin-modal {
+            overflow: hidden;
+        }
+
+        /* Anytime the body has the loading class, our
+           modal element will be visible */
+        .spin-modal {
+            display: block;
+        }
+
+    </style>
+
 
 </head>
-
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
-
-	<meta name="generator" content="HTTrack Website Copier/3.x">
-	<TITLE>Local index - HTTrack</TITLE>
-</HEAD>
-<BODY>
-<H1 ALIGN=Center>Index of locally available sites:</H1>
-	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="b2c.kiwi/index.html">
-						B2C Direct
-					</A>		
-			</TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<BR>
-	<BR>
-  	<H6 ALIGN="RIGHT">
-	<I>Mirror and index made by HTTrack Website Copier [XR&amp;CO'2008]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=b2c.kiwi/index.html">
+<body class="cnt-home loading">
+<toast></toast>
+<div class="wrapper home-one single-product-page">
+<style>
+            .categori-menu-list {
+            display: block !important;
+        }
+</style>
 
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+<!-- HEADER AREA START -->
+<header class="header-area" ng-controller="headerController" ng-cloak>
+    <!-- Header top area start -->
+    <div class="header-top-area" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <div class="top-bar-left">
+                        <!-- welcome -->
+                        <div class="welcome">
+                            <p>New Zealand's Fastest Online Shopping Destination</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="topbar-nav">
+                        <div class="wpb_wrapper">
+                            <!-- my account -->
+                            <div class="switcher">
+                                <!-- language-menu -->
+                                <div class="language my-top-header-info">
+                                    <a href="mailto:account@b2c.kiwi"><i class="fa fa-envelope-o"></i>
+                                        account@b2c.kiwi</a>
+                                </div>
+                                <div class="language my-top-header-info">
+                                    <i class="fa fa-map-marker"></i> 525 Great South Road
+                                </div>
+                                <div class="language my-top-header-info">
+                                    <i class="fa fa-phone"></i> 021607848
+                                </div>
+                                <!-- currency-menu -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar area end -->
+    <!-- Header middle area start -->
+    <div class="header-middle-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-md-12">
+                    <!-- site-logo -->
+                    <div class="site-logo">
+                        <a href="index.html"><img src="bege/images/logo/logo-white.png" alt="Nikado"></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <!-- header-search -->
+                    <div class="header-search clearfix">
+                        <div class="category-select pull-right">
+                            <select class="nice-select-menu" ng-model="categoryId">
+                                <option value="" data-display="All Categories">All Categories</option>
+                                  <option value="107" >Sheds & Carports</option>
+                                  <option value="105" >Postage & packing supplies</option>
+                                  <option value="99" >Pet Supplies</option>
+                            </select>
+                        </div>
+                        <div class="header-search-form my-header-search-form">
+                            <form>
+                                <input type="text" name="search" ng-model="keyword" placeholder="Search product...">
+                                <input type="submit" name="submit" value="Search" ng-click="search()">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .white-achor {
+                        color: #ffffff !important;
+                        cursor: pointer !important;
+                    }
+                </style>
+                <div class="col-xl-4 col-md-12">
+                    <!-- shop-cart-menu -->
+                    <div class="shop-cart-menu pull-right">
+                        <ul>
+                            <li ng-if="!isAuthenticated">
+                                <a class="white-achor" href="products.html">
+                                    <i class="ion-ios-shuffle-strong">
+
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li ng-if="!isAuthenticated">
+                                <a href="signin.html" class="white-achor"><i class="ion-log-in"></i></a>
+                            </li>
+
+                            <li ng-if="isAuthenticated">
+                                <a class="white-achor" href="account.html"><i class="ion-ios-person"></i></a>
+                            </li>
+
+                            <li ng-if="isAuthenticated">
+                                <a class="white-achor" ng-click="logout()">
+                                    <i class="ion-log-out">
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li><a class="white-achor" ng-href="{{!isAuthenticated ? '/signin':'/cart'}}">
+                            <span class="cart-icon">
+                                <i class="ion-bag"></i><sup>{{cartItemAmount?cartItemAmount:0}}</sup>
+                            </span>
+                                <span class="cart-text" ng-if="isAuthenticated">
+                                <span class="cart-text-title">My cart <br> <strong>$ {{totalPrice?totalPrice:0}}</strong> </span>
+                            </span>
+
+                                <span class="cart-text" ng-if="!isAuthenticated">
+                                <span class="cart-text-title">My cart <br> <strong>&nbsp;</strong> </span>
+                            </span>
+                            </a>
+                                <ul ng-if="cartItems.length > 0">
+                                    <li ng-repeat="cartItem in cartItems | limitTo: 4">
+                                        <!-- single-shop-cart-wrapper -->
+                                        <div class="single-shop-cart-wrapper">
+                                            <div class="shop-cart-img">
+                                                <a href="cart.html"><img
+                                                        ng-src="{{hostUrl + cartItem.productSingle.mainImages[0].fullPath + clientIdStr}}"
+                                                        alt="Image of Product"></a>
+                                            </div>
+                                            <div class="shop-cart-info">
+                                                <h5><a href="cart.html">{{cartItem.productSingle.name | limitTo : 30}}</a>
+                                                </h5>
+                                                <span class="price">$ {{cartItem.productSingle.promotionPrice}}</span>
+                                                <span class="quantaty">Qty: {{cartItem.amount}}</span>
+                                                <span class="cart-remove"><a ng-click="delete(cartItem.id)"><i
+                                                        class="fa fa-times"></i></a></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li ng-if="cartItems.length > 4">
+                                        <!-- shop-cart-total -->
+                                        <div class="shop-cart-total my-shop-cart-total">
+                                            <a href="cart.html"><p>View More ...</p></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="shop-cart-btn">
+                                            <a href="checkout.html">Checkout</a>
+                                            <a href="cart.html" class="pull-right">View Cart</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header middle area end -->
+    <!-- Header bottom area start -->
+    <div class="header-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 hidden-md hidden-sm pull-left category-wrapper">
+                    <div class="categori-menu">
+                        <span class="categorie-title">Categories</span>
+                        <nav>
+                            <ul class="categori-menu-list menu-hidden">
+
+                                 <li>
+                                     <a href="productse680.html?categoryId=107">
+                                         Sheds & Carports<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a href="products4a0a.html?categoryId=105">
+                                         Postage & packing supplies<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+                                 <li>
+                                     <a href="products7f15.html?categoryId=99">
+                                         Pet Supplies<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                     </a>
+                                 </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <!-- main-menu -->
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li class="current"><a href="index.html">Home</a></li>
+                                <li><a href="products.html">Shop</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="orders.html">Orders</a>
+                                <li><a href="about-us.html">About Us</a>
+                                <li><a href="faq.html">FAQ</a>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mobile-menu-area">
+                        <div class="mobile-menu">
+                            <nav id="mobile-menu-active">
+                                <ul class="menu-overflow">
+                                    <li class="current"><a href="index.html">Home</a></li>
+                                    <li><a href="products.html">Shop</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="orders.html">Orders</a>
+                                    <li><a href="faq.html">Q&A</a>
+                                </ul>
+                                </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header bottom area end -->
+</header>
+<!-- HRADER AREA END --><script>
+    var qrId = '';
+    
+    var activityId = '';
+
+    var categoryId = '';
+
+    var orderId = '';
+
+    var clientId = '';
+         clientId = '42';
+
+    var clientIdStr = '';
+    if(clientId){
+        clientIdStr = '&clientId=' + clientId;
+    }
+
+    var keyword = '';
+
+    var footerId = '';
+
+    var hostUrl = '';
+        hostUrl = 'api.html';
+
+    var addressId = '';
+
+    var fxTheme = '';
+         fxTheme = 'bege';
+
+    var productId = '';
+</script>
+
+    <!-- Slider area -->
+    <div class="slider-area">
+        <div class="container">
+            <div class="row">
+                <div class="slider-hidden col-lg-3">
+
+                </div>
+                <div class="slider col-xl-9">
+
+                    <!-- slider-area start -->
+                    <div class="slider-area-inner">
+                        <!-- slider start -->
+                        <div class="slider-inner">
+                            <div id="mainSlider" class="nivoSlider nevo-slider home-page-slider col-lg-12">
+                                    <img src="api/v1/attachment/2019_01_10_14_23_34_adv%202532e.jpg?filename=2019_01_10_14_23_34_adv%202.jpg&amp;clientId=42"
+                                         alt="main slider" title="#htmlcaption1"/>
+                                    <img src="api/v1/attachment/2019_01_09_12_32_10_adv-27abc.jpg?filename=2019_01_09_12_32_10_adv-2.jpg&amp;clientId=42"
+                                         alt="main slider" title="#htmlcaption2"/>
+                                    <img src="api/v1/attachment/2019_01_10_14_26_35_adv%201b7c6.jpg?filename=2019_01_10_14_26_35_adv%201.jpg&amp;clientId=42"
+                                         alt="main slider" title="#htmlcaption3"/>
+                            </div>
+
+                                    <div id="htmlcaption1" class="nivo-html-caption slider-caption">
+                                        <div class="slider-progress"></div>
+                                        <div class="col-md-9">
+                                            <div class="slider-content slider-content-1 slider-animated-1 my-slider-content">
+                                                <h1 class="hone">Patio Canopy Roof 4.95M x 3M</h1>
+                                                <h2 class="htwo">It is the best option to go for spaces outdoor</h2>
+
+                                                <div class="button-1 hover-btn-2">
+                                                    <a href="products.html">SHOP NOW</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="htmlcaption2" class="nivo-html-caption slider-caption">
+                                        <div class="slider-progress"></div>
+                                        <div class="col-md-9">
+                                            <div class="slider-content slider-content-1 slider-animated-1 my-slider-content">
+                                                <h1 class="hone"></h1>
+                                                <h2 class="htwo">Backyard Discovery Tucson Cedar Wooden Swing Set</h2>
+
+                                                <div class="button-1 hover-btn-2">
+                                                    <a href="products.html">SHOP NOW</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="htmlcaption3" class="nivo-html-caption slider-caption">
+                                        <div class="slider-progress"></div>
+                                        <div class="col-md-9">
+                                            <div class="slider-content slider-content-1 slider-animated-1 my-slider-content">
+                                                <h1 class="hone">Our amazing price product</h1>
+                                                <h2 class="htwo"></h2>
+
+                                                <div class="button-1 hover-btn-2">
+                                                    <a href="products.html">SHOP NOW</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <!-- slider end -->
+                    </div>
+                    <!-- slider-area end -->
+                </div>
+                <div class="slider-banner-area col-sm-12">
+                            <div class="slider-banner">
+                                <div class="slider-single-banner">
+                                    <a href="products.html">
+                                        <img src="api/v1/attachment/2019_01_09_12_32_10_adv-27abc.jpg?filename=2019_01_09_12_32_10_adv-2.jpg&amp;clientId=42"
+                                             alt="Banner">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slider-banner">
+                                <div class="slider-single-banner">
+                                    <a href="products.html">
+                                        <img src="api/v1/attachment/2019_01_10_14_26_35_adv%201b7c6.jpg?filename=2019_01_10_14_26_35_adv%201.jpg&amp;clientId=42"
+                                             alt="Banner">
+                                    </a>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider area end -->
+
+    <!-- Policy area -->
+    <div class="policy-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="policy-area-inner">
+                        <div class="single-policy-area">
+                            <div class="single-policy">
+                                <div class="icon"><i class="icon ion-android-sync"></i></div>
+                                <h3>Free Return</h3>
+                                <p>30 days money back guarantee!</p>
+                            </div>
+                        </div>
+                        <div class="single-policy-area">
+                            <div class="single-policy">
+                                <div class="icon"><i class="icon ion-paper-airplane"></i></div>
+                                <h3>Free Shipping</h3>
+                                <p>Free shipping on all order</p>
+                            </div>
+                        </div>
+                        <div class="single-policy-area">
+                            <div class="single-policy">
+                                <div class="icon"><i class="icon ion-help-buoy"></i></div>
+                                <h3>Support 24/7</h3>
+                                <p>We support online 24 hrs a day</p>
+                            </div>
+                        </div>
+                        <div class="single-policy-area">
+                            <div class="single-policy">
+                                <div class="icon"><i class="icon ion-card"></i></div>
+                                <h3>Receive Gift Card</h3>
+                                <p>Recieve gift all over oder $50</p>
+                            </div>
+                        </div>
+                        <div class="single-policy-area">
+                            <div class="single-policy">
+                                <div class="icon"><i class="icon ion-ios-locked"></i></div>
+                                <h3>Secure Payment</h3>
+                                <p>We Value Your Security</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Policy area end -->
+
+    <!-- Deals Of The Day -->
+    <div class="deals-of-the-day-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title">
+                        <h3>Deals Of The Day</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="big-product-area">
+                <div class="row">
+                    <div class="product-carousel-active owl-carousel">
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper listview">
+                                        <div class="list-col4">
+                                            <div class="product-image home-deal-product-image">
+                                                <a href="detail/731.html">
+                                                    <img src="api/v1/attachment/2019_01_14_11_49_35_17a34.jpg?filename=2019_01_14_11_49_35_1.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/731.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8">
+                                            <div class="product-info home-deal-product-info">
+                                                <h2><a href="detail/731.html">Patio awning(BW7) </a></h2>
+                                                <span class="price">
+                                                <del>$ 1299.99</del> $ 999.99
+                                            </span>
+                                                <div class="product-rattings" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star-half-o"></i></span>
+                                                    <span><i class="fa fa-star-o"></i></span>
+                                                </div>
+                                                <div class="product-desc">
+                                                    <p><p>ALUMINUM CANOPY&nbsp;are the perfect choice when you need protection from the elements. Our aluminum &nbsp;canopies are made to last and feature a heavy-duty mill finish aluminum framework. Canopies are designed to protect your entry from both the rain and the snow.&nbsp;</p><p><br>&nbsp;</p></p>
+                                                </div>
+                                                <div class="deal-counter" ng-if="false">
+                                                    <div data-countdown="2019/08/02"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper listview">
+                                        <div class="list-col4">
+                                            <div class="product-image home-deal-product-image">
+                                                <a href="detail/716.html">
+                                                    <img src="api/v1/attachment/2019_01_09_16_43_34_%a6%a6%a5%a64%a6%af%a6%fe%a9-af96.jpg?filename=2019_01_09_16_43_34_%c2%a6%c2%a6%c2%a5%c2%a64%c2%a6%c2%af%c2%a6%c3%be%c2%a9-.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/716.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8">
+                                            <div class="product-info home-deal-product-info">
+                                                <h2><a href="detail/716.html">1.8M Wooden Chicken Coop Rabbit Hutch Guinea Pig Ferret Cage Hen House 2 Storey Run</a></h2>
+                                                <span class="price">
+                                                <del>$ 190</del> $ 179.95
+                                            </span>
+                                                <div class="product-rattings" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star-half-o"></i></span>
+                                                    <span><i class="fa fa-star-o"></i></span>
+                                                </div>
+                                                <div class="product-desc">
+                                                    <p><p>Where do your pets sleep? Do your pets just climb on your bed without your consent? Getting them their own house should fix this problem. The Fir wood Chicken Coop is designed to house your small pets. Made of waterproof and anti-termite material, it will last for years to come. Featuring 3 open doors and a ramp, the chicken coop will give your pets easy access. The chicken coop is built with sliding trays for easy cleaning. No more pets in your bed or unwanted places, the chicken coop will give your small pets their own home.</p></p>
+                                                </div>
+                                                <div class="deal-counter" ng-if="false">
+                                                    <div data-countdown="2019/08/02"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper listview">
+                                        <div class="list-col4">
+                                            <div class="product-image home-deal-product-image">
+                                                <a href="detail/714.html">
+                                                    <img src="api/v1/attachment/2019_01_04_12_09_58___2__19a1.jpg?filename=2019_01_04_12_09_58_%e8%83%8c%e6%99%af2%e5%b0%ba%e5%af%b8.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/714.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8">
+                                            <div class="product-info home-deal-product-info">
+                                                <h2><a href="detail/714.html">Wooden Chicken Coop Rabbit Hutch Guinea Pig Ferret Cage Hen House 2 Storey Run With Nesting Box</a></h2>
+                                                <span class="price">
+                                                <del>$ 200</del> $ 179.95
+                                            </span>
+                                                <div class="product-rattings" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star-half-o"></i></span>
+                                                    <span><i class="fa fa-star-o"></i></span>
+                                                </div>
+                                                <div class="product-desc">
+                                                    <p><p><span style="font-family:Arial, Helvetica, sans-serif;">Where do your pets sleep? Do your pets just climb on your bed without your consent? Getting them their own house should fix this problem. The Fir wood Chicken Coop is designed to house your small pets. Made of waterproof and anti-termite material, it will last for years to come. Featuring 3 open doors and a ramp, the chicken coop will give your pets easy access. The chicken coop is built with easy an open roof and sliding trays for easy cleaning. No more pets in your bed or unwanted places, the chicken coop will give your small pets their own home.&nbsp;</span></p></p>
+                                                </div>
+                                                <div class="deal-counter" ng-if="false">
+                                                    <div data-countdown="2019/08/02"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper listview">
+                                        <div class="list-col4">
+                                            <div class="product-image home-deal-product-image">
+                                                <a href="detail/702.html">
+                                                    <img src="api/v1/attachment/2019_01_04_11_21_09___2___%20copy%2010.33.56%20AMd7f4.jpg?filename=2019_01_04_11_21_09_%e8%83%8c%e6%99%af2%e4%b8%bb%e9%a1%b5%e5%9b%be%20copy%2010.33.56%20AM.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/702.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8">
+                                            <div class="product-info home-deal-product-info">
+                                                <h2><a href="detail/702.html">Large Flat Roof Wooden Dog House Kennel</a></h2>
+                                                <span class="price">
+                                                <del>$ 200</del> $ 180
+                                            </span>
+                                                <div class="product-rattings" ng-if="false">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star-half-o"></i></span>
+                                                    <span><i class="fa fa-star-o"></i></span>
+                                                </div>
+                                                <div class="product-desc">
+                                                    <p><p><span style="font-family:Arial, Helvetica, sans-serif;">Create a sanctuary for your dog with this Large Flat Roof Wooden Dog House Kennel! Fully weather resistant, crafted with high-quality natural Firwood and featuring a slightly slanted asphalt roof this house ensures your beloved pet dog has a safe comfortable shelter from the elements. The strategically placed door with removable plastic helps this dog kennel provide maximum ventilation while providing the best weather protection for your pet. Height adjustable legs ensure the house is just raised enough to avoid flooding but low enough for your dog to exit and enter safely. The flip-open hinged roof and removable floor make it easy to clean. Every dog will love getting ‘banished to the dog house’ with this beautiful flat roof pet house!</span></p></p>
+                                                </div>
+                                                <div class="deal-counter" ng-if="false">
+                                                    <div data-countdown="2019/08/02"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Deals Of The Day -->
+
+    <!-- Home fullwidth banner -->
+    <!-- Home fullwidth banner end -->
+
+    <!-- Best sellers -->
+    <div class="product-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title">
+                        <h3>Best Sellers</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="product-area-inner" ng-controller="homeController">
+                <div class="row">
+                    <div class="product-carousel-active-2 owl-carousel home-best-product">
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper gridview home-product-wrapper">
+                                        <div class="list-col4 home-product-image">
+                                            <div class="product-image">
+                                                <a href="detail/723.html">
+                                                    <img src="api/v1/attachment/2019_01_10_12_41_53_WeChat%20Image_201901101241370efe.png?filename=2019_01_10_12_41_53_WeChat%20Image_20190110124137.png&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/723.html"><i
+                                                            class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/723.html">XL Wooden Dog Kennel All-Weather Flat Roof Pet House w/Patio & Window - Beige</a>
+                                                </h2>
+                                                <span class="price">
+                                                <del>$ 219.95</del> $ 215.95
+                                            </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(723, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper gridview home-product-wrapper">
+                                        <div class="list-col4 home-product-image">
+                                            <div class="product-image">
+                                                <a href="detail/722.html">
+                                                    <img src="api/v1/attachment/2019_01_10_12_33_38_WeChat%20Image_20190110123315c713.png?filename=2019_01_10_12_33_38_WeChat%20Image_20190110123315.png&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/722.html"><i
+                                                            class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/722.html">XL Wooden Dog Kennel All-Weather Elevated Pet House w/Patio & Window-Beige</a>
+                                                </h2>
+                                                <span class="price">
+                                                <del>$ 229.95</del> $ 225.95
+                                            </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(722, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper gridview home-product-wrapper">
+                                        <div class="list-col4 home-product-image">
+                                            <div class="product-image">
+                                                <a href="detail/720.html">
+                                                    <img src="api/v1/attachment/2019_01_09_17_10_36_%a6%a6%a5%a67%a6%af%a6%fe%a9-34d4.jpg?filename=2019_01_09_17_10_36_%c2%a6%c2%a6%c2%a5%c2%a67%c2%a6%c2%af%c2%a6%c3%be%c2%a9-.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/720.html"><i
+                                                            class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/720.html">XL Wooden Dog House with Flip Open Hinged Roof and Side Window</a>
+                                                </h2>
+                                                <span class="price">
+                                                <del>$ 139.95</del> $ 135.95
+                                            </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(720, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper gridview home-product-wrapper">
+                                        <div class="list-col4 home-product-image">
+                                            <div class="product-image">
+                                                <a href="detail/719.html">
+                                                    <img src="api/v1/attachment/2019_01_10_12_36_52_WeChat%20Image_201901101236036db4.png?filename=2019_01_10_12_36_52_WeChat%20Image_20190110123603.png&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/719.html"><i
+                                                            class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/719.html">XXL Flat Roof Wooden Dog House Kennel</a>
+                                                </h2>
+                                                <span class="price">
+                                                <del>$ 149.95</del> $ 145.95
+                                            </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(719, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- single product -->
+                                <div class="single-product-area">
+                                    <div class="product-wrapper gridview home-product-wrapper">
+                                        <div class="list-col4 home-product-image">
+                                            <div class="product-image">
+                                                <a href="detail/702.html">
+                                                    <img src="api/v1/attachment/2019_01_04_11_21_09___2___%20copy%2010.33.56%20AMd7f4.jpg?filename=2019_01_04_11_21_09_%e8%83%8c%e6%99%af2%e4%b8%bb%e9%a1%b5%e5%9b%be%20copy%2010.33.56%20AM.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/702.html"><i
+                                                            class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/702.html">Large Flat Roof Wooden Dog House Kennel</a>
+                                                </h2>
+                                                <span class="price">
+                                                <del>$ 200</del> $ 180
+                                            </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(702, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single product end -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Best sellers end -->
+
+    <!-- Home fullwidth banner -->
+    <!-- Home fullwidth banner end -->
+
+
+    <!-- New Arrivals -->
+    <div class="product-area" ng-controller="homeController">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title">
+                        <h3>New Arrivals</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="product-area-inner">
+            <div class="row">
+            <div class="product-carousel-active-2 owl-carousel">
+                                <div class="col-sm-12">
+                                    <!-- single product -->
+                                    <div class="single-product-area my-single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/743.html">
+                                                    <img src="api/v1/attachment/2019_04_04_16_50_11_DSC_5731e15c.JPG?filename=2019_04_04_16_50_11_DSC_5731.JPG&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/743%7d.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2><a href="743.html">GARDEN SHED 3120mm x W 2570mm x H 2020mm</a></h2>
+                                                <span class="price">
+                                                    <del>$ 700</del> $ 600
+                                                    </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(743, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- single product end -->
+
+                                    <!-- single product -->
+                                    <div class="single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/734.html">
+                                                    <img src="api/v1/attachment/2019_01_14_13_15_53_adv%2014a82.jpg?filename=2019_01_14_13_15_53_adv%201.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/734.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/734.html">CARPORT LY-S2</a>
+                                                </h2>
+                                                <span class="price">
+                                                        <del>$ 4099</del> $ 3499
+                                                        </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(734, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- single product end -->
+                                </div>
+                                <div class="col-sm-12">
+                                    <!-- single product -->
+                                    <div class="single-product-area my-single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/733.html">
+                                                    <img src="api/v1/attachment/2019_01_14_13_00_52_adv%2036597.png?filename=2019_01_14_13_00_52_adv%203.png&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/733%7d.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2><a href="733.html">CARPORT LY-S1</a></h2>
+                                                <span class="price">
+                                                    <del>$ 4099</del> $ 3499
+                                                    </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(733, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- single product end -->
+
+                                    <!-- single product -->
+                                    <div class="single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/732.html">
+                                                    <img src="api/v1/attachment/2019_01_14_11_55_51_18b66.jpg?filename=2019_01_14_11_55_51_1.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/732.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/732.html">Patio awning(BW8) </a>
+                                                </h2>
+                                                <span class="price">
+                                                        <del>$ 1399.99</del> $ 1099.99
+                                                        </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(732, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- single product end -->
+                                </div>
+                                <div class="col-sm-12">
+                                    <!-- single product -->
+                                    <div class="single-product-area my-single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/730.html">
+                                                    <img src="api/v1/attachment/2019_01_10_14_17_12_WeChat%20Image_201901101416497717.png?filename=2019_01_10_14_17_12_WeChat%20Image_20190110141649.png&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/730%7d.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2><a href="730.html">Pets Imperial Extra Large Insulated Wooden Dog Kennel XP-713</a></h2>
+                                                <span class="price">
+                                                    <del>$ 219.95</del> $ 199.5
+                                                    </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(730, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- single product end -->
+
+                                    <!-- single product -->
+                                    <div class="single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/729.html">
+                                                    <img src="api/v1/attachment/2019_01_10_14_03_01_prod-sizef3b7.jpg?filename=2019_01_10_14_03_01_prod-size.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/729.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/729.html">Pets Imperial Extra Large Insulated Wooden Dog Kennel XP-712</a>
+                                                </h2>
+                                                <span class="price">
+                                                        <del>$ 145.5</del> $ 135.5
+                                                        </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(729, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- single product end -->
+                                </div>
+                                <div class="col-sm-12">
+                                    <!-- single product -->
+                                    <div class="single-product-area my-single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/728.html">
+                                                    <img src="api/v1/attachment/2019_01_10_13_58_01_prod-main-tempb098.jpg?filename=2019_01_10_13_58_01_prod-main-temp.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/728%7d.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2><a href="728.html">Pets Imperial Extra Large Insulated Wooden Dog Kennel DH8L</a></h2>
+                                                <span class="price">
+                                                    <del>$ 140.5</del> $ 120.5
+                                                    </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(728, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- single product end -->
+
+                                    <!-- single product -->
+                                    <div class="single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/725.html">
+                                                    <img src="api/v1/attachment/2019_01_10_13_43_59_prod-compose9e9d.jpg?filename=2019_01_10_13_43_59_prod-compose.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/725.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/725.html">XXL Wooden Dog Kennel 2 Door All-Weather Flat Roof Pet House w/Patio - Beige</a>
+                                                </h2>
+                                                <span class="price">
+                                                        <del>$ 349.95</del> $ 339.95
+                                                        </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(725, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- single product end -->
+                                </div>
+                                <div class="col-sm-12">
+                                    <!-- single product -->
+                                    <div class="single-product-area my-single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/724.html">
+                                                    <img src="api/v1/attachment/2019_01_10_13_39_18_WeChat%20Image_20190110133900782f.png?filename=2019_01_10_13_39_18_WeChat%20Image_20190110133900.png&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/724%7d.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2><a href="724.html">XXL Wooden Dog Kennel 2 Door All-Weather Pet House w/Patio & Window - Beige</a></h2>
+                                                <span class="price">
+                                                    <del>$ 359.95</del> $ 350.95
+                                                    </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(724, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- single product end -->
+
+                                    <!-- single product -->
+                                    <div class="single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/718.html">
+                                                    <img src="api/v1/attachment/2019_01_09_17_00_46_%a6%a6%a5%a61%a6%af%a6%fe90f0.jpg?filename=2019_01_09_17_00_46_%c2%a6%c2%a6%c2%a5%c2%a61%c2%a6%c2%af%c2%a6%c3%be.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/718.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/718.html">XXL Luxury Wooden Dog House with Removable Porch & Floor</a>
+                                                </h2>
+                                                <span class="price">
+                                                        <del>$ 169.95</del> $ 165.95
+                                                        </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(718, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- single product end -->
+                                </div>
+                                <div class="col-sm-12">
+                                    <!-- single product -->
+                                    <div class="single-product-area my-single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/717.html">
+                                                    <img src="api/v1/attachment/2019_01_09_16_46_11_%a6%a6%a5%a65%a6%af%a6%fe%a9-918a.jpg?filename=2019_01_09_16_46_11_%c2%a6%c2%a6%c2%a5%c2%a65%c2%a6%c2%af%c2%a6%c3%be%c2%a9-.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/717%7d.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2><a href="717.html">Wooden Chicken Coop Rabbit Hutch Guinea Pig Ferret Cage Hen House With 2 Nesting Box</a></h2>
+                                                <span class="price">
+                                                    <del>$ 360</del> $ 339.95
+                                                    </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(717, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- single product end -->
+
+                                    <!-- single product -->
+                                    <div class="single-product-area">
+                                        <div class="product-wrapper gridview"
+                                        ">
+                                        <div class="list-col4">
+                                            <div class="product-image home-new-product-image">
+                                                <a href="detail/714.html">
+                                                    <img src="api/v1/attachment/2019_01_04_12_09_58___2__19a1.jpg?filename=2019_01_04_12_09_58_%e8%83%8c%e6%99%af2%e5%b0%ba%e5%af%b8.jpg&amp;clientId=42"
+                                                         alt="">
+                                                </a>
+                                                <div class="quickviewbtn">
+                                                    <a href="detail/714.html"><i class="ion-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-col8 home-new-product-info">
+                                            <div class="product-info">
+                                                <h2>
+                                                    <a href="detail/714.html">Wooden Chicken Coop Rabbit Hutch Guinea Pig Ferret Cage Hen House 2 Storey Run With Nesting Box</a>
+                                                </h2>
+                                                <span class="price">
+                                                        <del>$ 200</del> $ 179.95
+                                                        </span>
+                                            </div>
+                                            <div class="product-hidden">
+                                                <div class="add-to-cart">
+                                                    <a ng-click="addToCart(714, 1)">Add to cart</a>
+                                                </div>
+                                                <div class="star-actions">
+                                                    <div class="product-rattings" ng-if="false">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star-half-o"></i></span>
+                                                        <span><i class="fa fa-star-o"></i></span>
+                                                    </div>
+                                                    <ul class="actions" ng-if="false">
+                                                        <li><a href="#"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                        <li><a href="#"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- single product end -->
+                                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <!-- New Arrivals end -->
+
+    <!-- product carosel area-->
+    <div class="product-carosel-area" ng-controller="homeController" ng-cloak>
+        <div class="container" ng-if="false">
+            <div class="row">
+                <!-- Product column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="section-title">
+                        <h3>Car Shelter</h3>
+                    </div>
+                    <div class="mini-product carosel-next-prive  owl-carousel">
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                        </div>
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                            <!-- single product end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product column end -->
+                <!-- Product column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="section-title">
+                        <h3>Outdoors Furniture</h3>
+                    </div>
+                    <div class="mini-product carosel-next-prive  owl-carousel">
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                        </div>
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                            <!-- single product end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product column end -->
+                <!-- Product column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="section-title">
+                        <h3>Green Houses</h3>
+                    </div>
+                    <div class="mini-product carosel-next-prive  owl-carousel">
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                        </div>
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                            <!-- single product end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product column end -->
+
+                <!-- Product column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="section-title">
+                        <h3>Garden Sheds</h3>
+                    </div>
+                    <div class="mini-product carosel-next-prive  owl-carousel">
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                        </div>
+                        <div class="mini-product-listview">
+                            <!-- single product -->
+                            <!-- single product end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product column end -->
+            </div>
+        </div>
+    </div>
+    <!-- product carosel area end -->
+
+
+<footer class="footer-area my-footer-area">
+
+<footer class="footer-area">
+<!-- newsletter area -->
+<div class="newsletter-area" ng-if="false">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-xl-12 my-footer-newsletter-area">
+                <div class="newsletter-text">
+                    <div class="icon"><i class="icon ion-email"></i></div>
+                        <h3>Sign Up To Newsletter</h3>
+                        <h4>..and Receive $29 Coupon For First Shopping</h4>
+                    </div>
+                <div class="newsletter">
+                <div class="newsletter-box">
+                    <form action="#">
+                        <input class="subscribe" placeholder="your email address" name="email" id="subscribe" type="email">
+                        <button type="submit" class="submit">subscribe!</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- newsletter area end -->
+<!-- footer policy area -->
+<div class="footer-policy-area">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-reply-all"></i></p>
+        <h3>Free Returns</h3>
+        <p>Currently over 50 countries qualify for express international shipping.</p>
+    </div>
+</div>
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-ribbon-b"></i></p>
+        <h3>Customer Support</h3>
+        <p>We really care about you and your website as much as you do.</p>
+    </div>
+</div>
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-android-plane"></i></p>
+        <h3>International Shipping</h3>
+        <p>Currently over 50 countries qualify for express international shipping.</p>
+    </div>
+</div>
+<div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+    <div class="footer-policy-box">
+        <p><i class="icon ion-android-star"></i></p>
+        <h3>Dedicated Service</h3>
+        <p>Consult our specialists for help with an order, customization, or design advice.</p>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- footer policy area end -->
+
+<div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-md-3 col-xs-12">
+                    <div class="footer-logo-area my-footer-logo-area">
+                        <a href="index.html"><img src="bege/images/logo/logo-black.png" alt="footer logo"></a>
+                                                <ul>
+                            <li>
+                                <p>More of what you want.<br>Our company philosophy has never changed, that is supplying quality products and services at cheaper prices. </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                            <li><a href="address.html">My Address</a></li>
+                            <li><a href="orders.html">Order History</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Category</h3>
+                        <ul>
+                                <li>
+                                    <a href="productse680.html?categoryId=107">
+                                        Sheds & Carports
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="products4a0a.html?categoryId=105">
+                                        Postage & packing supplies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="products7f15.html?categoryId=99">
+                                        Pet Supplies
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="term-condition.html">Term & Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2 col-md-2 col-xs-12">
+                    <div class="footer-menu">
+                        <h3>Contact info:</h3>
+                        <ul>
+                            <li>525 Great South Road </li>
+                        </ul>
+                        <h3>Telephone:</h3>
+                        <ul>
+                            <li>021607848</li>
+                        </ul>
+                        <h3>Email:</h3>
+                        <ul>
+                            <a href="mailto:account@b2c.kiwi"><li>account@b2c.kiwi</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- footer copyright area -->
+<div class="footer-copyright-area">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-lg-12 col-md-12 my-footer-copyright">
+    <p>Copyright © 2018 B2C Direct . All Rights Reserved.</p>
+</div>
+<div class="col-sm-12 col-lg-6 col-md-6 pull-right" ng-if="false">
+    <img src="bege/images/icons/payment-icon.png" alt="payment icon">
+</div>
+</div>
+</div>
+</div>
+<!-- footer copyright area end -->
+</footer></div>
+<div ng-controller="dashboardController">
+    <div class="spin-modal" ng-if="loading"></div>
+</div>
+
+
+<script type="text/ng-template" id="needLoginTemplate">
+    <div class="theme_title_center align_center">
+        <br>
+        <h3>请先登陆</h3>
+        <span></span>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <p>您需要先登陆才能进行下一步操作</p>
+                <br>
+                <br>
+                <a href="/signin" class="btn-upper btn btn-primary checkout-page-button">
+                    去登陆
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="registerFormTemplate">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Modal dialog</span>
+                <p class="margin-four">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-very-small button popup-modal-dismiss no-margin" href="#">Dismiss</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="payDialogModal">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right service_page_main_post align_center">
+            <div class="wrapper" style="text-align: center">
+                <span class="slider-subtitle5 black-text no-margin-bottom">Choose payment method</span>
+                <br>
+                <br>
+                <a ng-repeat="gateway in gateways"
+                   style="cursor: pointer;"
+                   class="highlight-button btn btn-lg button popup-modal-dismiss no-margin my-pay-type-btn" ng-click="pay(gateway)">
+                    {{gateway.type}}</a>
+                <br>
+                <br>
+                <br>
+                <a class="highlight-button btn btn-small button popup-modal-dismiss no-margin pull-right"
+                   ng-click="closePayDialog()">Dismiss</a>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- javascript libraries / javascript files set #1 -->
+<!-- jQuery CDN -->
+<script src="../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- jQuery Local -->
+<script>window.jQuery || document.write('<script src="bege/js/jquery-3.2.1.min.js"><\/script>')</script>
+
+<!-- Popper min js -->
+<script src="bege/js/popper.min.js"></script>
+<!-- Bootstrap min js  -->
+<script src="bege/js/bootstrap.min.js"></script>
+<!-- nivo slider pack js  -->
+<script src="bege/js/jquery.nivo.slider.pack.js"></script>
+<!-- All plugins here -->
+<script src="bege/js/plugins.js"></script>
+<!-- Main js  -->
+<script src="bege/js/main.js"></script>
+
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>
+<script src="../www.google-analytics.com/analytics.js" async defer></script>
+
+
+
+<!-- _________ angular js lib__________ -->
+<script src="js/app-libs/angular/angular.min.js"></script>
+<script src="js/app-libs/angular-busy-tracker/busy.min.js"></script>
+<script src="js/app-libs/spin.js/spin.min.js"></script>
+<script src="js/app-libs/angular-spinner/angular-spinner.min.js"></script>
+<script src="js/app-libs/ng-dialog/js/ngDialog.min.js"></script>
+<script src="js/app-libs/bootbox-js/bootbox.min.js"></script>
+<script src="js/app-libs/angular-messages/angular-messages.min.js"></script>
+<script src="js/app-libs/angular-resource/angular-resource.min.js"></script>
+
+<script src="js/app-libs/highcharts-ng/highstock.src.js"></script>
+<script src="js/app-libs/highcharts-ng/highcharts-ng.min.js"></script>
+<script src="js/app-libs/angular-wizard/dist/angular-wizard.min.js"></script>
+<script src="js/app-libs/dropzone/min/dropzone.min.js"></script>
+<script src="js/app-libs/ng-dropzone/dist/ng-dropzone.min.js"></script>
+
+<script src="js/app-libs/moment/moment.min.js"></script>
+<script src="js/app-libs/moment-timezone/moment-timezone-with-data.min.js"></script>
+<script src="js/app-libs/angular-datepicker/angular-datepicker.min.js"></script>
+<script src="js/app-libs/ng-toast/ngToast.min.js"></script>
+<script src="js/app-libs/angular-animate.min.js"></script>
+<script src="js/app-libs/angular-sanitize.min.js"></script>
+<script src="js/app-libs/angular-utils-pagination/dirPagination.js"></script>
+<script type="text/javascript" src="js/app-libs/lodash.min.js"></script>
+<!-- _________ angular js app -->
+<script src="js/app/app.js"></script>
+<script src="js/app/app-constant.js"></script>
+<script src="js/app/controllers/home.controller.js"></script>
+<script src="js/app/cargoexpress-controllers/cargo-home.controller.js"></script>
+<script src="js/app/controllers/products.controller.js"></script>
+<script src="js/app/controllers/faq.controller.js"></script>
+<script src="js/app/controllers/login.controller.js"></script>
+<script src="js/app/controllers/cart.controller.js"></script>
+<script src="js/app/controllers/order.controller.js"></script>
+<script src="js/app/controllers/order-detail.controller.js"></script>
+<script src="js/app/controllers/checkout.controller.js"></script>
+<script src="js/app/controllers/category.controller.js"></script>
+<script src="js/app/controllers/header.controller.js"></script>
+<script src="js/app/cargoexpress-controllers/cargo-header.controller.js"></script>
+<script src="js/app/controllers/register.controller.js"></script>
+<script src="js/app/controllers/footer.controller.js"></script>
+<script src="js/app/controllers/detail.controller.js"></script>
+<script src="js/app/controllers/address.controller.js"></script>
+<script src="js/app/controllers/dashboard.controller.js"></script>
+<script src="js/app/controllers/coin.controller.js"></script>
+<script src="js/app/controllers/add-address.controller.js"></script>
+<script src="js/app/controllers/account.controller.js"></script>
+<script src="js/app/controllers/coin-activity.controller.js"></script>
+<script src="js/app/controllers/find-password.controller.js"></script>
+<script src="js/app/controllers/contact.controller.js"></script>
+<script src="js/app/bege-controllers/bege-checkout.controller.js"></script>
+<script src="js/app/controllers/edit-address.controller.js"></script>
+<script src="js/app/controllers/website-news.controller.js"></script>
+
+
+
+<script src="js/app/services/account.service.js"></script>
+<script src="js/app/services/auth.service.js"></script>
+<script src="js/app/services/home.service.js"></script>
+<script src="js/app/services/order.service.js"></script>
+<script src="js/app/services/resources.service.js"></script>
+
+<script src="js/app/services/address.service.js"></script>
+<script src="js/app/services/app-user.service.js"></script>
+<script src="js/app/services/availability.service.js"></script>
+<script src="js/app/services/balance.service.js"></script>
+<script src="js/app/services/balance-detail.service.js"></script>
+<script src="js/app/services/cart.service.js"></script>
+<script src="js/app/services/cart-item.service.js"></script>
+<script src="js/app/services/category.service.js"></script>
+<script src="js/app/services/coin-activity.service.js"></script>
+<script src="js/app/services/coin-history.service.js"></script>
+<script src="js/app/services/content.service.js"></script>
+<script src="js/app/services/country.service.js"></script>
+<script src="js/app/services/coupon.service.js"></script>
+<script src="js/app/services/currency.service.js"></script>
+<script src="js/app/services/experience.service.js"></script>
+<script src="js/app/services/faq.service.js"></script>
+<script src="js/app/services/favorite.service.js"></script>
+<script src="js/app/services/feature-type.service.js"></script>
+<script src="js/app/services/feedback.service.js"></script>
+<script src="js/app/services/feedback-type.service.js"></script>
+<script src="js/app/services/footer.service.js"></script>
+<script src="js/app/services/gateway.service.js"></script>
+<script src="js/app/services/guest-requirement.service.js"></script>
+<script src="js/app/services/home-page-slider.service.js"></script>
+<script src="js/app/services/inventory-detail.service.js"></script>
+<script src="js/app/services/invitation.service.js"></script>
+<script src="js/app/services/language.service.js"></script>
+<script src="js/app/services/member-group.service.js"></script>
+<script src="js/app/services/product-multi.service.js"></script>
+<script src="js/app/services/product-single.service.js"></script>
+<script src="js/app/services/registration-answer.service.js"></script>
+<script src="js/app/services/registration-question.service.js"></script>
+<script src="js/app/services/registration-question-option.service.js"></script>
+<script src="js/app/services/shipment.service.js"></script>
+<script src="js/app/services/shipment-detail.service.js"></script>
+<script src="js/app/services/shipment-fee.service.js"></script>
+<script src="js/app/services/social-link.service.js"></script>
+<script src="js/app/services/tag.service.js"></script>
+<script src="js/app/services/term-condition.service.js"></script>
+<script src="js/app/services/transaction-single.service.js"></script>
+<script src="js/app/services/transaction-single-item.service.js"></script>
+<script src="js/app/services/website-column.service.js"></script>
+<script src="js/app/services/my.service.js"></script>
+<script src="js/app/services/profile.service.js"></script>
+<script src="js/app/services/website-news.service.js"></script>
+<script src="js/app/services/attribute.service.js"></script>
+
+
+<script src="js/app/directives/file-dropzone.directive.js"></script>
+<script src="js/app/directives/compare-password.directive.js"></script>
+<script src="js/app/directives/compare-to.directive.js"></script>
+<script src="js/app/directives/complex-password.directive.js"></script>
+<script src="js/app/directives/valid-email.directive.js"></script>
 
 </body>
 
+<!-- Mirrored from b2c.kiwi/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Sep 2021 11:59:05 GMT -->
 </html>
-
-
